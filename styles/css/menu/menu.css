@@ -3,6 +3,10 @@
   width: 100%;
   background: #f6f6f6;
   display: inline-flex; }
+  .menu-main-title {
+    font-family: 'RageItalic';
+    font-size: 4.8rem;
+    text-transform: uppercase; }
   .menu-main-search {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 25%;
@@ -33,7 +37,7 @@
       color: #000; }
     .menu-main-links-user::before {
       content: " ";
-      background: url("/assets/sprites.png");
+      background: url("/assets/sprites.png") no-repeat;
       background-position: 1px 3px;
       background-size: 94px;
       width: 30px;
@@ -41,7 +45,7 @@
       display: inline-block; }
     .menu-main-links-wishlist::before {
       content: " ";
-      background: url("/assets/sprites.png");
+      background: url("/assets/sprites.png") no-repeat;
       background-position: -27px 3px;
       background-size: 94px;
       width: 20px;
@@ -53,5 +57,34 @@
       padding: 1% 2.5% 0.3%; }
       .menu-main-links-account:hover {
         color: #fff; }
-
-/* override bootstrap */
+  .menu-main-nav {
+    border-bottom: 1px solid #e6e6e6; }
+    .menu-main-nav:before {
+      content: " ";
+      background: url("/assets/sprites.png") no-repeat;
+      background-position: -1px -43px;
+      background-size: 94px;
+      width: 64px;
+      height: 39px;
+      display: inline-block;
+      vertical-align: middle; }
+    .menu-main-nav::after {
+      content: " ";
+      background: url("/assets/sprites.png") no-repeat;
+      background-position: -64px -31px;
+      background-size: 94px;
+      width: 3px;
+      height: 64px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 15px; }
+    .menu-main-nav-ul {
+      list-style: none;
+      display: inline-flex;
+      padding: 0; }
+    .menu-main-nav-link {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2rem;
+      margin-left: 20px;
+      text-transform: uppercase; }

@@ -22,9 +22,11 @@ gulp.task('copy', function () {
     )
 });
 
-gulp.task('perform-css', function () {
+gulp.task('perform-css', ['sass'], function () {
     return gulp.src(['styles/css/**/*.css', '!styles/css/styles.css'])
-        .pipe(cleanCSS())
+        .pipe(cleanCSS({
+            rebase: false
+        }))
         .pipe(concat('styles.css'))
         .pipe(gulp.dest('build/css'));
 })
@@ -59,7 +61,7 @@ gulp.task('webserver', function () {
 gulp.task('development', function () {
     const watcher = gulp.watch(
         ['js/**/*.js', './*.html', 'styles/sass/**/*.scss'],
-        ['copy','sass', 'uglifyjs', 'perform-css']
+        ['perform-css', 'copy', 'uglifyjs',]
     );
     watcher.on('change', function (event) {
         console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');

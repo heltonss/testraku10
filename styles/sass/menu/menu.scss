@@ -3,13 +3,13 @@ $sprites: url("/assets/sprites.png");
 $color-menu-links: #000;
 $padding-left-links: 12%;
 
-@mixin icon-before($posX, $posy, $width) {
+@mixin icon-before($posX, $posy, $width, $height) {
     content: " ";
-    background: $sprites;
+    background: $sprites no-repeat;
     background-position: $posX $posy;
     background-size: 94px;
     width: $width;
-    height: 20px;
+    height: $height;
     display: inline-block;
 }
 
@@ -19,10 +19,17 @@ $padding-left-links: 12%;
     background: #f6f6f6;
     display: inline-flex;
 
+    &-title {
+        font-family: 'RageItalic';
+        font-size: 4.8rem;
+        text-transform: uppercase;
+    }
+
     &-search {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         width: 25%;
         margin-left: 17%;
+
         &-input {
             background: #d9d9d9;
             border: none;
@@ -51,39 +58,60 @@ $padding-left-links: 12%;
         color: $color-menu-links;
         display: inline-block;
         margin-left: 5%;
+
         &:hover {
             text-decoration: none;
-            color: $color-menu-links;            
+            color: $color-menu-links;
         }
 
         &-user {
             &::before {
-                @include icon-before(1px, 3px, 30px);
+                @include icon-before(1px, 3px, 30px, 20px);
             }
         }
 
         &-wishlist {
             &::before {
-                @include icon-before(-27px, 3px, 20px);
+                @include icon-before(-27px, 3px, 20px, 20px);
             }
         }
-        &-account{
+
+        &-account {
             background: #000;
             color: #fff;
-            padding: 1% 2.5% 0.3%; 
+            padding: 1% 2.5% 0.3%;
+
             &:hover {
-                color: #fff
-            }           
+                color: #fff;
+            }
+        }
+    }
+
+    &-nav {
+        border-bottom: 1px solid #e6e6e6;
+          
+        &:before{
+            @include icon-before(-1px, -43px, 64px, 39px);
+            vertical-align: middle;
+        }
+        &::after{
+            @include icon-before(-64px, -31px, 3px, 64px);
+            vertical-align: middle;
+            margin-left: 15px;
+        }
+
+        &-ul {
+            list-style: none;
+            display: inline-flex;
+            padding: 0;
+        }
+
+        &-link {
+            display: block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2rem;
+            margin-left: 20px;
+            text-transform: uppercase;
         }
     }
 }
-
-/* override bootstrap */
-// .input-group-addon {
-//     border: solid 2px #333 !important;
-//     border-radius: 1px;
-//   }
-
-//   .form-control{
-//     border: width border-style color;
-//   }
