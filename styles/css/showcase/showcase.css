@@ -1,0 +1,18 @@
+.showcase {
+  height: 600px;
+  display: inline-flex;
+  font-family: Arial, Helvetica, sans-serif; }
+  .showcase-products {
+    display: block; }
+  .showcase-info {
+    width: 300px; }
+    .showcase-info-button {
+      width: 30%;
+      font-size: 1.3rem;
+      display: inline; }
+    .showcase-info-icon {
+      background: #cccccc;
+      padding: 2%;
+      color: #fff; }
+  .showcase-descritivo {
+    display: block; }
