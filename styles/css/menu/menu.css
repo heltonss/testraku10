@@ -1,10 +1,57 @@
+.menu-main {
+  height: 29px;
+  width: 100%;
+  background: #f6f6f6;
+  display: inline-flex; }
+  .menu-main-search {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 25%;
+    margin-left: 17%; }
+    .menu-main-search-input {
+      background: #d9d9d9;
+      border: none;
+      height: 27px;
+      padding-left: 3%;
+      width: 70%; }
+    .menu-main-search-bt {
+      border: solid 1px #000;
+      background: #f2f2f2;
+      display: inline;
+      padding: 1.2% 1.5%;
+      margin-left: -4px; }
+  .menu-main-group-links {
+    display: inline-block;
+    font-size: 1.2rem;
+    width: 50%; }
+  .menu-main-links {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    margin-left: 5%; }
+    .menu-main-links:hover {
+      text-decoration: none;
+      color: #000; }
+    .menu-main-links-user::before {
+      content: " ";
+      background: url("/assets/sprites.png");
+      background-position: 1px 3px;
+      background-size: 94px;
+      width: 30px;
+      height: 20px;
+      display: inline-block; }
+    .menu-main-links-wishlist::before {
+      content: " ";
+      background: url("/assets/sprites.png");
+      background-position: -27px 3px;
+      background-size: 94px;
+      width: 20px;
+      height: 20px;
+      display: inline-block; }
+    .menu-main-links-account {
+      background: #000;
+      color: #fff;
+      padding: 1% 2.5% 0.3%; }
+      .menu-main-links-account:hover {
+        color: #fff; }
+
 /* override bootstrap */
-body {
-  background: red; }
-
-.input-group-addon {
-  border: solid 2px #333 !important;
-  border-radius: 1px; }
-
-.form-control {
-  border: width border-style color; }

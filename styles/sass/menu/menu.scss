@@ -1,14 +1,89 @@
-/* override bootstrap */
-body{
-    background: red
+$size-icon-search: 27px;
+$sprites: url("/assets/sprites.png");
+$color-menu-links: #000;
+$padding-left-links: 12%;
+
+@mixin icon-before($posX, $posy, $width) {
+    content: " ";
+    background: $sprites;
+    background-position: $posX $posy;
+    background-size: 94px;
+    width: $width;
+    height: 20px;
+    display: inline-block;
 }
 
-.input-group-addon {
-    border: solid 2px #333 !important;
-    border-radius: 1px;
-  }
-  
-  .form-control{
-    border: width border-style color;
-  }
-  
+.menu-main {
+    height: 29px;
+    width: 100%;
+    background: #f6f6f6;
+    display: inline-flex;
+
+    &-search {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        width: 25%;
+        margin-left: 17%;
+        &-input {
+            background: #d9d9d9;
+            border: none;
+            height: $size-icon-search;
+            padding-left: 3%;
+            width: 70%;
+        }
+
+        &-bt {
+            border: solid 1px #000;
+            background: #f2f2f2;
+            display: inline;
+            padding: 1.2% 1.5%;
+            margin-left: -4px;
+        }
+    }
+
+    &-group-links {
+        display: inline-block;
+        font-size: 1.2rem;
+        width: 50%;
+    }
+
+    &-links {
+        text-decoration: none;
+        color: $color-menu-links;
+        display: inline-block;
+        margin-left: 5%;
+        &:hover {
+            text-decoration: none;
+            color: $color-menu-links;            
+        }
+
+        &-user {
+            &::before {
+                @include icon-before(1px, 3px, 30px);
+            }
+        }
+
+        &-wishlist {
+            &::before {
+                @include icon-before(-27px, 3px, 20px);
+            }
+        }
+        &-account{
+            background: #000;
+            color: #fff;
+            padding: 1% 2.5% 0.3%; 
+            &:hover {
+                color: #fff
+            }           
+        }
+    }
+}
+
+/* override bootstrap */
+// .input-group-addon {
+//     border: solid 2px #333 !important;
+//     border-radius: 1px;
+//   }
+
+//   .form-control{
+//     border: width border-style color;
+//   }

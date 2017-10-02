@@ -5,29 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- inject:css -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- endinject -->
     <title>Rakuten Shop</title>
 </head>
 
-<body class="container">
+<body class="container-fluid">
     <header>
         <div class="row">
-            <nav>
-                <div class="input-group col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <input type="text" class="form-control" id="search" placeholder="Pesquisar no site">
-                    <div class="input-group-addon">
+            <nav class="menu-main">
+                <div class=" menu-main-search">
+                    <input type="text" class="menu-main-search-input" id="search" placeholder="Pesquisar no site">
+                    <div class="menu-main-search-bt">
                         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     </div>
+                </div>
+                <div class="menu-main-group-links">
+                    <a class="menu-main-links menu-main-links-user" href="#">Olá, Carolina | Sair</a>
+                    <a class="menu-main-links menu-main-links-wishlist" href="#">Wishlist</a>
+                    <a class="menu-main-links" href="#">Minha Conta | Meus Pedidos</a>
+                    <a class="menu-main-links menu-main-links-account" href="#">Minha sacola (0)</a>
                 </div>
             </nav>
         </div>
     </header>
 
-  <!-- inject:js -->
   <script src="js/script.js"></script>
-  <!-- endinject -->
 </body>
 
 </html>

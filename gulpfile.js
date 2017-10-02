@@ -16,7 +16,10 @@ gulp.task('sass', function () {
 });
 
 gulp.task('copy', function () {
-    return gulp.src('./index.html').pipe(gulp.dest('build/'));
+    return (
+        gulp.src(['./index.html']).pipe(gulp.dest('build/')),
+        gulp.src(['./assets/*.*']).pipe(gulp.dest('build/assets'))
+    )
 });
 
 gulp.task('perform-css', function () {
@@ -36,14 +39,14 @@ gulp.task('index', function () {
 });
 
 gulp.task('uglifyjs', function () {
-    return gulp.src(['js/**/*.js'])
+    return gulp.src(['js/library/jquery.min.js', 'js/**/*.js'])
         .pipe(uglify())
         .pipe(concat('script.js'))
         .pipe(clean('build/js'))
         .pipe(gulp.dest('build/js'));
 })
 
-gulp.task('webserver', function() {
+gulp.task('webserver', function () {
     gulp.src('build/')
         .pipe(server({
             livereload: true,
@@ -53,14 +56,14 @@ gulp.task('webserver', function() {
         }));
 });
 
-gulp.task('development', function () {  
+gulp.task('development', function () {
     const watcher = gulp.watch(
-        ['js/**/*.js','./index.html','styles/sass/**/*.scss'], 
-        ['sass','copy','uglifyjs','perform-css','index']
+        ['js/**/*.js', './*.html', 'styles/sass/**/*.scss'],
+        ['copy','sass', 'uglifyjs', 'perform-css']
     );
-    watcher.on('change', function(event) {
+    watcher.on('change', function (event) {
         console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-    }) 
+    })
 })
 
-gulp.task('default',['webserver','development']);
+gulp.task('default', ['webserver', 'development']);
